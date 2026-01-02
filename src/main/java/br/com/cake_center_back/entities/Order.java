@@ -25,8 +25,9 @@ public class Order {
 
     public Order() {}
 
-    public Order(Instant moment, OrderStatus orderStatus) {
+    public Order(Instant moment, User client, OrderStatus orderStatus) {
         this.moment = moment;
+        this.client = client;
         this.orderStatus = orderStatus;
     }
 
@@ -51,6 +52,14 @@ public class Order {
 
     public void setOrderStatus(OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+    public User getClient() {
+        return client;
+    }
+
+    public void setClient(User client) {
+        this.client = client;
     }
 
     @Override
