@@ -37,7 +37,7 @@ public class TestConfig implements CommandLineRunner {
         User u3 = new User("Buddy", "buddy@gmail.com","12345678");
 
         Order o1 = new Order(Instant.now(), OrderStatus.WAITING_PAYMENT);
-        Order o2 = new Order(Instant.now(), OrderStatus.WAITING_PAYMENT)
+        Order o2 = new Order(Instant.now(), OrderStatus.WAITING_PAYMENT);
 
         Category c1 = new Category("Cake");
         Category c2 = new Category("Muffin");
