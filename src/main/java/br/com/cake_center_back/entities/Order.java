@@ -19,6 +19,10 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
+    @ManyToOne()
+    @JoinColumn(name = "client_id")
+    private User client;
+
     public Order() {}
 
     public Order(Instant moment, OrderStatus orderStatus) {
