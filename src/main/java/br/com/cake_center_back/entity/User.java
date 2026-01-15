@@ -12,7 +12,6 @@ import java.util.UUID;
 @Table(name = "tb_user")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class User {
@@ -35,4 +34,11 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Product> products = new ArrayList<>();
+
+    public User(UUID id, String username, String password, String email) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 }

@@ -31,7 +31,7 @@ class UserRepositoryTest {
     @Test
     void deleteUserById(){
         User user = this.userRepository.save(
-                new User(null, "Maria", "1234", "maria@gmail.com", null)
+                new User(null, "Maria", "1234", "maria@gmail.com")
         );
         UUID id = user.getId();
         this.userRepository.deleteById(id);
