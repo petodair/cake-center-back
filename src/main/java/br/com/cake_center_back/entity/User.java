@@ -18,6 +18,6 @@ public class User {
     @Column(name = "password", length = 50, nullable = false)
     private String password;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", length = 100, nullable = false)
     private String email;
 }
