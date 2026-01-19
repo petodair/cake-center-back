@@ -38,6 +38,17 @@ public class ProductRepositoryTest {
         Assertions.assertEquals("Pastel", savedProduct.getName());
     }
 
+    @Test
+    void deleteProduct(){
+        Product product = createProduct("Mango Cake", "25.90");
+        this.productRepository.save(product);
+
+        productRepository.delete(product);
+
+        Product deletedProduct = this.productRepository.findById(product.getId()).orElse(null);
+        Assertions.assertNull(deletedProduct);
+    }
+
     private Product createProduct(String name, String price){
         Product product = new Product();
         product.setName(name);
