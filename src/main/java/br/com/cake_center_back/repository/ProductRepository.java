@@ -1,7 +1,11 @@
 package br.com.cake_center_back.repository;
 
 import br.com.cake_center_back.entity.Product;
+import br.com.cake_center_back.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface ProductRepository extends JpaRepository<Product, Long> {
+    List<Product> findByUser(User user);
 }
