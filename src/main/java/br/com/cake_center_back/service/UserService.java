@@ -4,6 +4,7 @@ import br.com.cake_center_back.dto.ApiResponse;
 import br.com.cake_center_back.dto.user.UserResponseDTO;
 import br.com.cake_center_back.dto.user.UserRequestDTO;
 import br.com.cake_center_back.entity.User;
+import br.com.cake_center_back.mapper.UserMapper;
 import br.com.cake_center_back.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class UserService implements IUserService{
         if(existsByEmail) {
             throw new RuntimeException("Email already exists");
         }
-        user = this.userRepository.save(userDTO.toEntity());
+        user = this.userRepository.save(UserMapper.toEntity(userDTO));
         return new ApiResponse<>(
                 ApiResponse.ResponseStatusType.SUCCESS,
                 HttpStatus.CREATED,
