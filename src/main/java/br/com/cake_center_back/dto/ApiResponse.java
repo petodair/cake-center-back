@@ -9,15 +9,18 @@ public record ApiResponse<D> (
         D data,
         String message
 ) {
-    ApiResponse(ResponseStatusType status, HttpStatusCode code, D data, String message){
+    public ApiResponse(ResponseStatusType status, HttpStatusCode code, D data, String message){
         this(status.getStatus(),code.value(),data,message);
     }
 
     @Getter
-    enum ResponseStatusType{
+    public enum ResponseStatusType{
+
         SUCCESS("success"),
         ERROR("error");
+
         final private String status;
+
         ResponseStatusType(String status){
             this.status = status;
         }
