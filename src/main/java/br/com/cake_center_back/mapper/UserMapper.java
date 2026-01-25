@@ -19,8 +19,7 @@ public class UserMapper {
     public static UserResponseDTO toDTO(User user) {
         return new UserResponseDTO(
                 user.getId(),
-                user.getUsername(),
-                user.getProducts()
+                user.getUsername()
         );
     }
 }
